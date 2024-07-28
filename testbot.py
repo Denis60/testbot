@@ -4,7 +4,7 @@ from streamlit_chat import message
 
 # Open API key
 
-openai.api_key = st.secrets["07f3dc1e559c45eb9822a8f0a6c2c3af"]
+openai.api_key = st.secrets["OPEN_API_KEY"]
 
 # Generating responses from the api
 
