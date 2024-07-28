@@ -8,9 +8,9 @@ openai.api_key = st.secrets[OPEN_API_KEY]
 
 # Generating responses from the api
 
-def generate_response(prompt)
+def generate_response(prompt):
     completions = openai.Completion.create(
-        engine = 'text-davinci-003',
+        engine = 'gpt-4',
         prompt = prompt,
         #max_tokens = 1024,
         n=1,
