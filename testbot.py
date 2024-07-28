@@ -4,15 +4,15 @@ from streamlit_chat import message
 
 # Open API key
 
-openai.api_key = st.secrets[OPEN_API_KEY]
+openai.api_key = st.secrets["07f3dc1e559c45eb9822a8f0a6c2c3af"]
 
 # Generating responses from the api
 
 def generate_response(prompt):
     completions = openai.Completion.create(
-        engine = 'gpt-4',
+        engine = "text-davinci-003",
         prompt = prompt,
-        #max_tokens = 1024,
+        max_tokens = 1024,
         n=1,
         stop=None,
         temperature=0.5
@@ -22,7 +22,7 @@ def generate_response(prompt):
 
 # Creating the chatbot interfaces
 
-st.title("Chatbot + Coding Craft + OpenAI" )
+st.title("Chatbot : Coding Craft + OpenAI ")
 
 # Storing the input
 
@@ -33,15 +33,15 @@ if 'past' not in st.session_state:
 
 # Creating a function that returns the user's input from a text input field
 
-def get_text()
-    input_text = st.text_input(You  , Hello, Coders, how are you, key = input)
+def get_text():
+    input_text = st.text_input("You : ", "Hello, Coders, how are you?", key = "input")
     return input_text
 
 # We will generate response using the 'generate response' function and store into variable called output
 
 user_input = get_text()
 
-if user_input
+if user_input:
     output = generate_response(user_input)
 
     # Store the output
@@ -54,5 +54,5 @@ if user_input
 if st.session_state['generated']:
 
     for i in range(len(st.session_state['generated']) -1, -1, -1):
-        message(st.session_state[generated][i], key=str(i))
-        message(st.session_state[past][i], is_user=True, key=str(i) + '_user')
+        message(st.session_state["generated"][i], key=str(i))
+        message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
