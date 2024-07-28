@@ -26,9 +26,9 @@ st.title("Chatbot + Coding Craft + OpenAI" )
 
 # Storing the input
 
-if 'generated' not in st.session_state
+if 'generated' not in st.session_state:
     st.session_state['generated'] = []
-if 'past' not in st.session_state
+if 'past' not in st.session_state:
     st.session_state['past'] = []
 
 # Creating a function that returns the user's input from a text input field
@@ -51,8 +51,8 @@ if user_input
 
 # Finally we display the chat history
 
-if st.session_state['generated']
+if st.session_state['generated']:
 
-    for i in range(len(st.session_state['generated']) -1, -1, -1)
+    for i in range(len(st.session_state['generated']) -1, -1, -1):
         message(st.session_state[generated][i], key=str(i))
         message(st.session_state[past][i], is_user=True, key=str(i) + '_user')
