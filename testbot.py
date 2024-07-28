@@ -22,7 +22,7 @@ def generate_response(prompt):
 
 # Creating the chatbot interfaces
 
-st.title(Chatbot  Coding Craft + OpenAI )
+st.title("Chatbot + Coding Craft + OpenAI" )
 
 # Storing the input
 
